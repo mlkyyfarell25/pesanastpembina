@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Admin — Import Pesan</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="admin-wrap">
+    <section class="admin-card">
+      <div class="eyebrow">ADMIN</div>
+      <h1>Import pesan dari Excel</h1>
+      <p class="muted">Pilih file Excel (.xlsx/.xls) secara langsung, atau tetap bisa paste seluruh tabel dari Excel. Data akan dikelompokkan otomatis berdasarkan penerima.</p>
+
+      <div class="tip"><strong>Kolom yang dibaca:</strong> Timestamp · Nama Lengkap · Kakak Penguji / Asisten Pembina · Kesan dan Pesan</div>
+
+      <input id="excelFile" type="file" accept=".xlsx,.xls,.csv" />
+      <div class="or">atau paste tabel Excel</div>
+      <textarea id="pasteBox" placeholder="Paste seluruh tabel Excel di sini (Ctrl + V)..."></textarea>
+      <div class="actions">
+        <button id="importBtn" class="btn primary">Import Data</button>
+        <button id="clearBtn" class="btn ghost">Bersihkan</button>
+      </div>
+
+      <div id="status" class="status hidden"></div>
+      <div id="preview" class="preview"></div>
+
+      <div id="exportArea" class="export hidden">
+        <h2>Data siap dipakai</h2>
+        <p class="muted">Klik tombol ini untuk membuat file <code>data.js</code>. Ganti file <code>data.js</code> di folder website dengan file hasil export ini.</p>
+        <button id="downloadBtn" class="btn primary">Download data.js</button>
+      </div>
+
+      <a class="back" href="index.html">← Lihat halaman pesan</a>
+    </section>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>
